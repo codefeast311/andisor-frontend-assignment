@@ -6,14 +6,14 @@ import { Divider } from "@mui/material";
 const ProductHeader = () => {
   return (
     <>
-      <div className="flex justify-between items-center  ">
+      <div className="flex flex-col md:flex-row justify-between items-center gap-4  ">
         <div className="flex gap-4 items-center ">
           <h3 className="text-2xl font-semibold text-black">Inventory</h3>
           <h3 className="text-2xl font-semibold text-gray-500">Products</h3>
           <h3 className="text-2xl font-semibold text-gray-500">Analytics</h3>
         </div>
 
-        <div className="flex gap-4 items-center">
+        <div className="flex flex-col md:flex-row gap-4 items-center">
           <button className="bg-blue-700 text-white px-4 py-2 rounded-full flex gap-2 hover:opacity-75">
             <AddIcon />
             Add New Product

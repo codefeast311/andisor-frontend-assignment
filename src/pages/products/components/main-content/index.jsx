@@ -101,7 +101,7 @@ const ProductsContent = ({ products, setProducts }) => {
   };
 
   return (
-    <div className="p-4">
+    <div className="md:p-4 overflow-scroll">
       <table className="min-w-full">
         <thead>
           <tr>
