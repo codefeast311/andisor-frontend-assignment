@@ -10,6 +10,7 @@ const ProductsContent = ({ products, setProducts }) => {
   const [editingProduct, setEditingProduct] = useState(null);
   const [editingVariant, setEditingVariant] = useState(null);
   const [editingSecondaryVariant, setEditingSecondaryVariant] = useState(null);
+  const [beforeSaveState, setBeforeSaveState] = useState([]);
 
   const toggleProductExpand = (index) => {
     setExpandedProducts((prev) => ({
@@ -31,6 +32,7 @@ const ProductsContent = ({ products, setProducts }) => {
   };
 
   const handleCancelProduct = () => {
+    setProducts(beforeSaveState);
     setEditingProduct(null);
   };
 
@@ -51,6 +53,7 @@ const ProductsContent = ({ products, setProducts }) => {
   };
 
   const handleCancelVariant = () => {
+    setProducts(beforeSaveState);
     setEditingVariant(null);
   };
 
@@ -74,6 +77,7 @@ const ProductsContent = ({ products, setProducts }) => {
   };
 
   const handleCancelSecondaryVariant = () => {
+    setProducts(beforeSaveState);
     setEditingSecondaryVariant(null);
   };
 
@@ -162,6 +166,7 @@ const ProductsContent = ({ products, setProducts }) => {
                     <button
                       className="text-blue-700 hover:text-blue-800 flex gap-1 items-center"
                       onClick={(e) => {
+                        setBeforeSaveState(products);
                         e.stopPropagation();
                         handleEditProduct(productIndex);
                       }}
@@ -389,6 +394,7 @@ const ProductsContent = ({ products, setProducts }) => {
                             <button
                               className="text-blue-700 hover:text-blue-800 flex gap-1 items-center"
                               onClick={(e) => {
+                                setBeforeSaveState(products);
                                 e.stopPropagation();
                                 handleEditVariant(productIndex, variantIndex);
                               }}
@@ -570,6 +576,7 @@ const ProductsContent = ({ products, setProducts }) => {
                                     <button
                                       className="text-blue-700 hover:text-blue-800 flex gap-1 items-center"
                                       onClick={(e) => {
+                                        setBeforeSaveState(products);
                                         e.stopPropagation();
                                         handleEditSecondaryVariant(
                                           productIndex,
